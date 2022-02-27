@@ -1,8 +1,10 @@
+// Keep track of whether or not mouse is down on either node
 const mouseDown = {
   node0: false,
   node1: false,
 };
 
+// Calculate offset needed for nodes to be centered relative to cursor when dragged
 const offset = {
   node0: [
     document.getElementById("node0").offsetWidth / 2,
@@ -14,6 +16,7 @@ const offset = {
   ],
 };
 
+// Always keep track of mouse X and Y position
 var mouseX, mouseY;
 
 onmousemove = (e) => {
@@ -21,6 +24,7 @@ onmousemove = (e) => {
   mouseY = e.y;
 };
 
+// Let system know that mouse is down on node (of 'target')
 function nodeGrab(target) {
   switch (target) {
     case 0:
@@ -32,6 +36,7 @@ function nodeGrab(target) {
   }
 }
 
+// Let system know that mouse is up on node (of 'target')
 function nodeDrop(target) {
   switch (target) {
     case 0:
@@ -43,6 +48,7 @@ function nodeDrop(target) {
   }
 }
 
+// If holding down on a node, set node position to cursor position
 setInterval(() => {
   if (mouseDown.node0 == true) {
     document.getElementById("node0").style.left =
