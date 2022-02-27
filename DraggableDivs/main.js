@@ -24,7 +24,7 @@ onmousemove = (e) => {
   mouseY = e.y;
 };
 
-// Let system know that mouse is down on node (of 'target')
+// Let system know when mouse is down on node (of 'target')
 function nodeGrab(target) {
   switch (target) {
     case 0:
@@ -36,7 +36,7 @@ function nodeGrab(target) {
   }
 }
 
-// Let system know that mouse is up on node (of 'target')
+// Let system know when mouse is up on node (of 'target')
 function nodeDrop(target) {
   switch (target) {
     case 0:
